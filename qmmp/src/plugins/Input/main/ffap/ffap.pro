@@ -18,9 +18,6 @@ INCLUDEPATH += $$EXTRA_PREFIX/libtaglib/include
 
 unix{
     QMAKE_CLEAN = $$DESTDIR/lib$${TARGET}.so
-    LIBS += -L$$EXTRA_PREFIX/libtaglib/lib -ltag$$STATIC_LIBRARY_SUFFIX
 }
 
-win32{
-    LIBS += -L$$EXTRA_PREFIX/libtaglib/lib -ltag
-}
+LIBS += -ltag

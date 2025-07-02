@@ -92,18 +92,11 @@ SOURCES += recycler.cpp \
     regularexpression.cpp \
     format.cpp
 
-DESTDIR = $$OUT_PWD/../../bin/$$TTK_VERSION
+DESTDIR = $$OUT_PWD/../../lib/$$TTK_VERSION
 
 TARGET = TTK$${TARGET}
 CONFIG += shared warn_off plugin lib qt thread
 TEMPLATE = lib
 
-INCLUDEPATH += $$PWD/ $$PWD/../../../extra/gcc/libtaglib/include
-
-win32{
-    LIBS += -L$$PWD/../../../extra/gcc/libtaglib/lib -ltag
-}
-
-unix{
-    LIBS += -L$$PWD/../../../extra/gcc/libtaglib/lib -ltag$$STATIC_LIBRARY_SUFFIX
-}
+INCLUDEPATH += $$PWD/
+LIBS += -ltag

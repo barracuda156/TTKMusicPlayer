@@ -5,7 +5,7 @@ include($$PWD/../../qmmp.pri)
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = app
-DESTDIR = $$OUT_PWD/../../bin/$$TTK_VERSION
+DESTDIR = $$OUT_PWD/../../lib/$$TTK_VERSION
 
 LIBS += -L$$DESTDIR -lTTKqmmp
 
@@ -17,12 +17,12 @@ win32:msvc:{
 }
 
 unix{
-    LIBS += -L$$PWD/../../../extra/gcc/libtaglib/lib -ltag$$STATIC_LIBRARY_SUFFIX
+    LIBS += -ltag
 }
 
 TEMPLATE = app
 
-SOURCES += main.cpp\
+SOURCES += main.cpp \
         mainwindow.cpp \
         musicplaylist.cpp \
         musicplayer.cpp

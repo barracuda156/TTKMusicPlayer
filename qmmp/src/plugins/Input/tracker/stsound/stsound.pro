@@ -14,7 +14,7 @@ INCLUDEPATH += $$EXTRA_PREFIX/libttk/include
 
 unix{
     QMAKE_CLEAN = $$DESTDIR/lib$${TARGET}.so
-    LIBS += -L$$EXTRA_PREFIX/libttk/lib -lstsound$$STATIC_LIBRARY_SUFFIX
+    LIBS += -L$$EXTRA_PREFIX/libttk/lib -lStSound
 }
 
 win32{

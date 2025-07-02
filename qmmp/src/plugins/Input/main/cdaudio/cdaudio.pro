@@ -21,7 +21,8 @@ contains(CONFIG, WITH_LIBCDDB): DEFINES += WITH_LIBCDDB
 unix{
     QMAKE_CLEAN = $$DESTDIR/lib$${TARGET}.so
     LIBS += -L$$EXTRA_PREFIX/libcdio/lib -lcdio$$STATIC_LIBRARY_SUFFIX \
-            -L$$EXTRA_PREFIX/libcdio/lib -lcdio_paranoia$$STATIC_LIBRARY_SUFFIX -lcdio_cdda$$STATIC_LIBRARY_SUFFIX
+            -lcdio_cdda$$STATIC_LIBRARY_SUFFIX -lcdio_paranoia$$STATIC_LIBRARY_SUFFIX \
+            -lcddb$$STATIC_LIBRARY_SUFFIX
 }
 
 win32{
