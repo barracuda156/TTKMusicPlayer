@@ -21,7 +21,7 @@
 
 #include <QFile>
 #include <qmmp/qmmp.h>
-#include <libasap/asap.h>
+#include <asap.h>
 
 /*!
  * @author Greedysky <greedysky@163.com>

@@ -1,8 +1,8 @@
 #include "v2mhelper.h"
 #include "archivereader.h"
 
-#include <libv2m/v2mconv.h>
-#include <libv2m/sounddef.h>
+#include <v2m/v2mconv.h>
+#include <v2m/sounddef.h>
 
 static bool v2mInitialized = false;
 int loadAndConvert(unsigned char *module, qint64 size, uint8_t **conv, int *convlen)

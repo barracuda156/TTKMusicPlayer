@@ -21,7 +21,7 @@
 
 #include <QMutex>
 #include <qmmp/effect.h>
-#include <libsonic/sonic.h>
+#include <sonic.h>
 
 #define DEFAULT_RATIO 50
 

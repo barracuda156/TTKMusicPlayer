@@ -20,7 +20,7 @@
 #define V2MHELPER_H
 
 #include <QFile>
-#include <libv2m/v2mplayer.h>
+#include <v2m/v2mplayer.h>
 
 /*!
  * @author Greedysky <greedysky@163.com>

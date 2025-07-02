@@ -22,7 +22,7 @@
 #include <QFile>
 #include <qmmp/qmmp.h>
 extern "C" {
-#include <libhively/hvl_replay.h>
+#include <hvl_replay.h>
 }
 
 /*!

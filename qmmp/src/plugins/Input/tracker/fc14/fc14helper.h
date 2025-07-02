@@ -21,7 +21,7 @@
 
 #include <QFile>
 #include <qmmp/qmmp.h>
-#include <libfc14/fc14audiodecoder.h>
+#include <fc14audiodecoder.h>
 
 /*!
  * @author Greedysky <greedysky@163.com>

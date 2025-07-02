@@ -22,8 +22,7 @@
 #include <QFile>
 extern "C" {
 #include <stdio_file.h>
-#include <libdca/dca.h>
-#include <libdca/gettimeofday.h>
+#include <dca.h>
 }
 
 #define BUFFER_SIZE 65536

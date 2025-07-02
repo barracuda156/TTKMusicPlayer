@@ -22,7 +22,7 @@
 #include <QFile>
 #include <qmmp/qmmp.h>
 extern "C" {
-#include <libqoa/qoaplay.h>
+#include <qoaplay.h>
 }
 
 /*!

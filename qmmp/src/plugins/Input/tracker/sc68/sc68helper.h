@@ -24,7 +24,7 @@
 #include <QFile>
 #include <qmmp/trackinfo.h>
 extern "C" {
-#include <libsc68/sc68/sc68.h>
+#include <sc68.h>
 }
 
 /*!

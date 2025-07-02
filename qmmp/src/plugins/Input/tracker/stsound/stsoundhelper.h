@@ -21,7 +21,7 @@
 
 #include <QFile>
 #include <qmmp/qmmp.h>
-#include <libstsound/ym_music.h>
+#include <libstsound/YmMusic.h>
 
 /*!
  * @author Greedysky <greedysky@163.com>
