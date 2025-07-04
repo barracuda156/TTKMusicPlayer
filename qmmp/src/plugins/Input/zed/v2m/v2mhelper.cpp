@@ -7,13 +7,15 @@
 static bool v2mInitialized = false;
 int loadAndConvert(unsigned char *module, qint64 size, uint8_t **conv, int *convlen)
 {
+    ssbase base;
+
     if(!v2mInitialized)
     {
         sdInit();
         v2mInitialized = true;
     }
 
-    const int ver = CheckV2MVersion(module, size);
+    const int ver = CheckV2MVersion(module, size, base);
     if(ver < 0)
     {
         return -1;
