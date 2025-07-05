@@ -272,11 +272,6 @@ find_library(TTK_QMMP_LIBRARY
 
 # qmmp include
 include_directories(${TTK_THIRDPARTY_DIR}/TTKqmmp)
-if(TTK_QT_VERSION VERSION_EQUAL "4" AND UNIX)
-  include_directories(
-    /usr/include/QtMultimediaKit
-    /usr/include/QtMobility)
-endif()
 
 
 add_subdirectory(TTKCommon)
