@@ -413,11 +413,19 @@ bool DecoderFLAC::initialize()
         configure(m_data->sample_rate, chmap, Qmmp::PCM_S8);
         break;
     case 16:
+#if Q_BYTE_ORDER == Q_LITTLE_ENDIAN
         configure(m_data->sample_rate, chmap, Qmmp::PCM_S16LE);
+#else
+        configure(m_data->sample_rate, chmap, Qmmp::PCM_S16BE);
+#endif
         break;
     case 24:
     case 32:
+#if Q_BYTE_ORDER == Q_LITTLE_ENDIAN
         configure(m_data->sample_rate, chmap, Qmmp::PCM_S32LE);
+#else
+        configure(m_data->sample_rate, chmap, Qmmp::PCM_S32BE);
+#endif
         break;
     default:
         return false;

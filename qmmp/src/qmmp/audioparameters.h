@@ -128,15 +128,22 @@ public:
      * @param bits Number of used bits in the sample (precision).
      * @param byteOrder Byte order.
      */
+#if Q_BYTE_ORDER == Q_LITTLE_ENDIAN
     static Qmmp::AudioFormat findAudioFormat(int bits, ByteOrder byteOrder = LittleEndian);
+#else
+    static Qmmp::AudioFormat findAudioFormat(int bits, ByteOrder byteOrder = BigEndian);
+#endif
 
 private:
     quint32 m_srate = 0;
     ChannelMap m_chan_map;
+#if Q_BYTE_ORDER == Q_LITTLE_ENDIAN
     Qmmp::AudioFormat m_format = Qmmp::PCM_S16LE;
+#else
+    Qmmp::AudioFormat m_format = Qmmp::PCM_S16BE;
+#endif
     int m_sz = 2;
     int m_precision = 16;
-
 };
 
 #endif

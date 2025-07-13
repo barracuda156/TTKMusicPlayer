@@ -28,6 +28,12 @@
 #include "channelmap.h"
 #include "regularexpression.h"
 
+#if Q_BYTE_ORDER == Q_LITTLE_ENDIAN
+    #define QMMP_DEFAULT_OUTPUT_FORMAT Qmmp::PCM_S16LE
+#else
+    #define QMMP_DEFAULT_OUTPUT_FORMAT Qmmp::PCM_S16BE
+#endif
+
 class QmmpPluginCache;
 class DecoderFactory;
 
@@ -203,14 +209,14 @@ protected:
      * @param map Map of channels.
      * @param f Audio format.
      */
-    void configure(quint32 srate, const ChannelMap &map, Qmmp::AudioFormat f = Qmmp::PCM_S16LE);
+    void configure(quint32 srate, const ChannelMap &map, Qmmp::AudioFormat f = QMMP_DEFAULT_OUTPUT_FORMAT);
     /*!
      * Use this function inside initialize() reimplementation to tell other plugins about audio parameters.
      * @param srate Sample rate.
      * @param channels Number of channels (internal channel sequence).
      * @param f Audio format.
      */
-    void configure(quint32 srate, int channels, Qmmp::AudioFormat f = Qmmp::PCM_S16LE);
+    void configure(quint32 srate, int channels, Qmmp::AudioFormat f = QMMP_DEFAULT_OUTPUT_FORMAT);
     /*!
      * Use this function inside initialize() reimplementation to tell other plugins about audio parameters.
      * @param p Audio parameters.

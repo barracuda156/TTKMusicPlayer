@@ -272,11 +272,19 @@ bool DecoderFFmpeg::initialize()
         break;
     case AV_SAMPLE_FMT_S16:
     case AV_SAMPLE_FMT_S16P:
+#if Q_BYTE_ORDER == Q_LITTLE_ENDIAN
         format = Qmmp::PCM_S16LE;
+#else
+        format = Qmmp::PCM_S16BE;
+#endif
         break;
     case AV_SAMPLE_FMT_S32:
     case AV_SAMPLE_FMT_S32P:
+#if Q_BYTE_ORDER == Q_LITTLE_ENDIAN
         format = Qmmp::PCM_S32LE;
+#else
+        format = Qmmp::PCM_S32BE;
+#endif
         break;
     case AV_SAMPLE_FMT_FLT:
     case AV_SAMPLE_FMT_FLTP:

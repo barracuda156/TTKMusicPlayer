@@ -1,6 +1,7 @@
 #include "outputqtmultimedia.h"
 
 #include <unistd.h>
+#include <QtGlobal>
 #include <QSettings>
 #include <QAudioOutput>
 #include <QAudioFormat>
@@ -28,7 +29,11 @@ bool OutputQtMultimedia::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFor
     QAudioFormat qformat;
     qformat.setCodec("audio/pcm");
     qformat.setSampleRate(freq);
+#if Q_BYTE_ORDER == Q_LITTLE_ENDIAN
     qformat.setByteOrder(QAudioFormat::LittleEndian);
+#else
+    qformat.setByteOrder(QAudioFormat::BigEndian);
+#endif
     qformat.setChannelCount(map.size());
     qformat.setSampleType(QAudioFormat::SignedInt);
 
@@ -41,12 +46,15 @@ bool OutputQtMultimedia::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFor
         qformat.setSampleSize(8);
         break;
     case Qmmp::PCM_S16LE:
+    case Qmmp::PCM_S16BE:
         qformat.setSampleSize(16);
         break;
     case Qmmp::PCM_S24LE:
+    case Qmmp::PCM_S24BE:
         qformat.setSampleSize(24);
         break;
     case Qmmp::PCM_S32LE:
+    case Qmmp::PCM_S32BE:
         qformat.setSampleSize(32);
         break;
     default:
